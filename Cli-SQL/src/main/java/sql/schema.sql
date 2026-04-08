@@ -26,7 +26,8 @@ CREATE TABLE livro (
                        categoria_id INT REFERENCES categoria(id),
                        nome VARCHAR(50) NOT NULL,
                        ano_publicacao DATE NOT NULL,
-                       genero VARCHAR(50) NOT NULL
+                       genero VARCHAR(50) NOT NULL,
+                       status VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE usuario(

@@ -23,12 +23,14 @@ INSERT INTO autor (nome, data_nascimento, nacionalidades) VALUES
                                                               ('Clarice Lispector', '1920-12-10', 'Brasileira');
 
 
-INSERT INTO livro (autor_id, editora_id, categoria_id, nome, ano_publicacao, genero) VALUES
-                                                                                         (1, 1, 1, 'Fundação', '1951-06-01', 'Ficção Científica'),
-                                                                                         (2, 2, 2, 'Dom Casmurro', '1899-12-31', 'Romance'),
-                                                                                         (3, 3, 3, 'O Iluminado', '1977-01-28', 'Terror'),
-                                                                                         (4, 4, 1, 'Assassinato no Expresso Oriente', '1934-01-01', 'Suspense'),
-                                                                                         (5, 5, 2, 'A Hora da Estrela', '1977-10-26', 'Drama');
+INSERT INTO livro (autor_id, editora_id, categoria_id, nome, ano_publicacao, genero, status) VALUES
+                                                                                         (1, 1, 1, 'Fundação', '1951-06-01', 'Ficção Científica', 'Disponivel'),
+                                                                                         (2, 2, 2, 'Dom Casmurro', '1899-12-31', 'Romance', 'Disponivel'),
+                                                                                         (3, 3, 3, 'O Iluminado', '1977-01-28', 'Terror', 'Emprestado'),
+                                                                                         (4, 4, 1, 'Assassinato no Expresso Oriente', '1934-01-01', 'Suspense', 'Perdido'),
+                                                                                         (5, 5, 2, 'A Hora da Estrela', '1977-10-26', 'Drama', 'Perdido'),
+                                                                                         (5, 5, 1, 'Harry potter', '1977-10-26', 'Ficção', 'Em Manutenção');
+
 
 -- 5. Inserindo Usuários
 INSERT INTO usuario (nome, email, data_registro) VALUES
