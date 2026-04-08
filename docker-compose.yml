@@ -1,0 +1,19 @@
+services:
+
+  db:
+    image: postgres:16
+    container_name: db_atividade
+    environment:
+      POSTGRES_DB: biblioteca
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql  # Salva os dados para não perder quando parar o container
+
+volumes:
+  pgdata:  # Volume para guardar os dados do banco de forma permanente
+
+#Comando para subir container
+## docker-compose up -d
