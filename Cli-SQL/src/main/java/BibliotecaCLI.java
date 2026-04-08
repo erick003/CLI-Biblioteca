@@ -4,6 +4,7 @@ import commands.EmprestimoComandos;
 import commands.LivroComandos;
 import commands.ReservaComandos;
 import commands.UsuarioComandos;
+import io.github.cdimascio.dotenv.Dotenv;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -19,9 +20,10 @@ import static commands.UsuarioComandos.consultaDeUsuarioPorId;
 
 public class BibliotecaCLI {
     public static void main(String[] args) throws SQLException {
-        String URL = "jdbc:postgresql://localhost:5432/biblioteca";
-        String USUARIO = "postgres";
-        String SENHA = "postgres";
+        Dotenv dotenv = Dotenv.load();
+        String URL = dotenv.get("URL_DB");
+        String USUARIO = dotenv.get("USER_DB");
+        String SENHA = dotenv.get("PASS_DB");
         String caminhoBase = "Cli-SQL/src/main/java/sql/";
         Scanner scanner = new Scanner(System.in);
 

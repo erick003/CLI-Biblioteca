@@ -1,19 +1,18 @@
 services:
-
   db:
     image: postgres:16
     container_name: db_atividade
+    env_file:
+      - .env  # O Docker vai procurar as variáveis aqui dentro
     environment:
-      POSTGRES_DB: biblioteca
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      # O Docker mapeia as variáveis do seu .env para as do Postgres
+      POSTGRES_DB: ${DB_NAME:-biblioteca}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql  # Salva os dados para não perder quando parar o container
+      - pgdata:/var/lib/postgresql
 
 volumes:
-  pgdata:  # Volume para guardar os dados do banco de forma permanente
-
-#Comando para subir container
-## docker-compose up -d
+  pgdata:
